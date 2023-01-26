@@ -1,0 +1,114 @@
+/* General styles */
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+}
+    
+p {
+    background-color: red;
+    justify-content: center;
+    width: 45%;
+    text-align: center;
+    font-size: 4em;
+    margin: auto;
+    margin-bottom: 0.5em;
+    font-family: 'VT323', sans-serif;
+    font-weight: bolder;
+}
+/* Calculator container */
+.calculatorBox {
+    width: 20em;
+    margin: 0 auto;
+    background-color: #000000;
+    border-radius: 0.5em;
+    padding: 2em;
+    border: 0.5em solid #ff0000;
+}
+
+/* Display container */
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 2em;
+}
+
+/* Displays */
+.upperDisplay, .lowerDisplay {
+    width: 85%;
+    height: 0.5em;
+    background-color: #00ff00;
+    border-radius: 0.5em;
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: right;
+    color: #000000;
+}
+
+/* Buttons container */
+.buttons {
+    columns: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Buttons */
+button {
+    width: 20%;
+    height: 2.5em;
+    background-color: #00ff00;
+    border-radius: 0.5em;
+    border: none;
+    font-size: 1.5em;
+    margin: 3px;
+    color: #000000;
+}
+
+#result{
+    width: 42%;
+}
+
+button:hover {
+    color: #000000;
+    background-color: #006400;
+    transition: 0.1s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.9);
+    background-color: #ff0000;
+    color: white;
+}
+
+footer {   
+    margin-top: 1.5em;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'VT323', sans-serif;
+    color: #04BF68;
+    }
+    
+    a {
+    color: #04BF68;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    }
+    
+    a:hover {
+    color: #fff;
+    text-shadow: 2px 2px 2px #04BF68;
+    }
+
+    a:active {
+      transform: scale(0.9);
+      color: #ff0000;
+    }
+    
+
+@media (max-width: 600px) {
+    button {
+        width: 22.5%;
+    }
+}
