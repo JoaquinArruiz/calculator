@@ -1,20 +1,90 @@
-const acButton = document.getElementById("AC")
-const cButton = document.getElementById("C")
-const percentButton = document.getElementById("percent")
-const divisionButton = document.getElementById("division")
-const sevenButton = document.getElementById("seven")
-const eightButton = document.getElementById("eight")
-const nineButton = document.getElementById("nine")
-const fourButton = document.getElementById("four")
-const fiveButton = document.getElementById("five")
-const sixButton = document.getElementById("six")
-const oneButton = document.getElementById("one")
-const twoButton = document.getElementById("two")
-const zeroButton = document.getElementById("zero")
-const threeButton = document.getElementById("three")
-const plusButton = document.getElementById("plus")
-const minusButton = document.getElementById("minus")
-const multButton = document.getElementById("mult")
-const dotButton = document.getElementById("dot")
-const resultButton = document.getElementById("result")
+let upperDisplay = document.querySelector('.upperdisplay');
+let lowerDisplay = document.querySelector('.lowerdisplay');
+let numButtons = document.querySelectorAll('.num');
+let operatorButtons = document.querySelectorAll('.operator');
+let decimalButton = document.querySelector('.decimal');
+let clearButton = document.querySelector('.clear');
+let equalsButton = document.querySelector('.equals');
+let currentOperator;
+let currentNum = '0';
+let previousNum;
+let operatorUsed = false;
 
+//Lower display was a feature that I was trying to add but in the end it caused too much trouble, if i'm revisiting the project in the future
+//I will try to implement it
+
+for (let i = 0; i < numButtons.length; i++) {
+    numButtons[i].addEventListener('click', function() {
+      if (operatorUsed === true) {
+        currentNum = this.textContent;
+        operatorUsed = false;
+      } else {
+        if (currentNum === '0') {
+          currentNum = this.textContent;
+        } else {
+          currentNum += this.textContent;
+        }
+      }
+      upperDisplay.textContent = currentNum;
+    });
+  }
+
+for (let i = 0; i < operatorButtons.length; i++) {
+    operatorButtons[i].addEventListener('click', function() {
+      operatorUsed = true;
+      previousNum = currentNum;
+      currentOperator = this.textContent;
+      lowerDisplay.textContent = previousNum + ' ' + currentOperator;
+      currentNum = '0';
+    });
+  }
+
+
+decimalButton.addEventListener('click', function() {
+    if (!currentNum.includes('.')) {
+      currentNum += '.';
+    }
+    upperDisplay.textContent = currentNum;
+  });
+
+clearButton.addEventListener('click', function() {
+    currentOperator = undefined;
+    currentNum = '0';
+    upperDisplay.textContent = currentNum;
+    lowerDisplay.textContent = '';
+  });
+
+clearButton.addEventListener('click', function() {
+    currentOperator = undefined;
+    currentNum = '0';
+    upperDisplay.textContent = currentNum;
+    lowerDisplay.textContent = '';
+  });
+
+
+
+equalsButton.addEventListener('click', function() {
+    previousNum = parseFloat(previousNum);
+    currentNum = parseFloat(currentNum);
+  
+    switch (currentOperator) {
+      case '+':
+        currentNum = previousNum + currentNum;
+        break;
+      case '-':
+        currentNum = previousNum - currentNum;
+        break;
+      case '*':
+        currentNum = previousNum * currentNum;
+        break;
+      case '/':
+        currentNum = previousNum / currentNum;
+        break;
+      default:
+        return;
+    }
+  
+    upperDisplay.textContent = currentNum;
+    lowerDisplay.textContent = '';
+  });
+  
