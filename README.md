@@ -15,9 +15,10 @@ I really enjoyed this project, very linear, no big trouble.
 
 #### Known Issues:   
 - If the number is too long it breaks through the display                
-- Lets you divide by 0 and returns "infinity" insted of undefined (maybe add a pop up?)
+- Lets you divide by 0 and returns "infinity" instead of undefined (maybe add a pop up?)
 - If you start to input after a result was thrown you can change the result string (example: if you do 2+2 and returns 4, and then you type 36 you have 436)
 - Need to restart currentNum after throwing a result if no operation button is pressed
+- Need to add a Delete button that deletes only the last input
                 
 - Need to add some accesibility:
   - A lower display may be useful to know what are you doing
