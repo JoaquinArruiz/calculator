@@ -127,16 +127,34 @@ a:active {
     }
 
 
-@media (max-width: 600px) {
-    .calculator {
-        width: 100%;
+@media (max-width: 700px) {
+.calculator {
+        width: 50%;
     }
 
+.buttonCalculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px 3px;
+        padding-top: 1em;
+    }
+
+.clear {
+    width: 3em;
+    height: 3em;
+    font-size: 1em;
+    text-align: center;
+}
+
 button {
-        width: calc(33.33% - 20px);
+        width: 3em;
+        height: 3em;
+        margin: auto;
+        padding: 0;
+        font-size: 1em;
     }
 
 .equals {
-        width: calc(100% - 20px);
+        grid-column: 1/5;
     }
     }

@@ -1,5 +1,5 @@
 let upperDisplay = document.querySelector('.upperdisplay');
-let lowerDisplay = document.querySelector('.lowerdisplay');
+//let lowerDisplay = document.querySelector('.lowerdisplay');
 let numButtons = document.querySelectorAll('.num');
 let operatorButtons = document.querySelectorAll('.operator');
 let decimalButton = document.querySelector('.decimal');
@@ -34,7 +34,7 @@ for (let i = 0; i < operatorButtons.length; i++) {
       operatorUsed = true;
       previousNum = currentNum;
       currentOperator = this.textContent;
-      lowerDisplay.textContent = previousNum + ' ' + currentOperator;
+      //lowerDisplay.textContent = previousNum + ' ' + currentOperator;
       currentNum = '0';
     });
   }
@@ -51,14 +51,14 @@ clearButton.addEventListener('click', function() {
     currentOperator = undefined;
     currentNum = '0';
     upperDisplay.textContent = currentNum;
-    lowerDisplay.textContent = '';
+    //lowerDisplay.textContent = '';
   });
 
 clearButton.addEventListener('click', function() {
     currentOperator = undefined;
     currentNum = '0';
     upperDisplay.textContent = currentNum;
-    lowerDisplay.textContent = '';
+    //lowerDisplay.textContent = '';
   });
 
 
@@ -85,6 +85,6 @@ equalsButton.addEventListener('click', function() {
     }
   
     upperDisplay.textContent = currentNum;
-    lowerDisplay.textContent = '';
+    //lowerDisplay.textContent = '';
   });
   
